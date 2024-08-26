@@ -1017,6 +1017,8 @@ footer::after {
     .list-inline.footer_social_icon > li {
         padding: 8px 3px;
     }
-
+    .comp {
+        font-size: 40px;
+    }
 
 }
