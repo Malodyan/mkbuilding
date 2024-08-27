@@ -901,7 +901,7 @@ footer::after {
         top: 20px;
     }
     .carousel-inner > .item > a > img, .carousel-inner > .item > img {
-        height: 450px;
+        height: 400px;
     }
     .carousel-caption > h3 {
         font-size: 26px;
@@ -972,7 +972,7 @@ footer::after {
         padding: 0 8px;
     }
     .carousel-inner > .item > a > img, .carousel-inner > .item > img {
-        height: 420px;
+        height: 350px;
     }
     .carousel-caption {
         top: 5px;
