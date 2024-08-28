@@ -463,7 +463,7 @@
                     <h2>Հարցեր ունե՞ք</h2>
                     <h2 class="second_heading">Մի ամաչեք կապվել մեզ հետ</h2>
                 </div>
-                <form role="form" class="form-inline text-right col-md-6">
+                <form role="form" class="form-inline text-right col-md-6" method="POST" action="form.php">
                     <div class="form-group">
                         <input type="text" class="form-control" id="name" placeholder="Անուն">
                     </div>
@@ -478,6 +478,28 @@
             </div>
         </div>
     </section><!-- Contact form end -->
+
+
+    <!-- for scrip -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Предотвращаем стандартную отправку формы
+
+            var formData = new FormData(this);
+
+            fetch('form.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('response').innerHTML = '<div class="alert alert-success">' + data + '</div>';
+            })
+            .catch(error => {
+                document.getElementById('response').innerHTML = '<div class="alert alert-danger">Произошла ошибка.</div>';
+            });
+        });
+    </script>
 
     <!-- Footer -->
     <footer>
