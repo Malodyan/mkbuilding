@@ -477,23 +477,26 @@
                 </form>
             </div>
         </div>
+
+        <div id="response" class="mt-3"></div>
     </section><!-- Contact form end -->
 
 
-    <!-- for scrip -->
+    <!-- form scrip -->
     <script>
         document.getElementById('contactForm').addEventListener('submit', function(event) {
             event.preventDefault(); // Предотвращаем стандартную отправку формы
 
             var formData = new FormData(this);
 
-            fetch('form.php', {
+            fetch('process_form.php', {
                 method: 'POST',
                 body: formData
             })
             .then(response => response.text())
             .then(data => {
                 document.getElementById('response').innerHTML = '<div class="alert alert-success">' + data + '</div>';
+                alert('Спасибо, ваше сообщение было отправлено.'); // Показываем сообщение после успешной отправки
             })
             .catch(error => {
                 document.getElementById('response').innerHTML = '<div class="alert alert-danger">Произошла ошибка.</div>';
